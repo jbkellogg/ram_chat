@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from datetime import date
+import streamlit as st # Import streamlit
 
 # Load environment variables
 load_dotenv()
@@ -10,7 +11,22 @@ load_dotenv()
 _config_dir = os.path.dirname(__file__)
 
 # --- General Config ---
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# Try to get GOOGLE_API_KEY from Streamlit secrets, otherwise from .env
+try:
+    GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+except (AttributeError, KeyError): # AttributeError if st.secrets doesn't exist (local run), KeyError if key is missing
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+try:
+    LANGCHAIN_API_KEY = st.secrets["LANGCHAIN_API_KEY"]
+except (AttributeError, KeyError):
+    LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
+
+try:
+    LANGCHAIN_TRACING_V2 = st.secrets["LANGCHAIN_TRACING_V2"]
+except (AttributeError, KeyError):
+    LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
+
 LLM_MODEL_NAME = "gemini-1.5-pro-latest" # Or your preferred model
 EMBEDDING_MODEL_NAME = "models/text-embedding-004"
 AGENT_IS_VERBOSE = True # Set to True for detailed agent logging
