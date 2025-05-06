@@ -14,17 +14,17 @@ _config_dir = os.path.dirname(__file__)
 # Try to get GOOGLE_API_KEY from Streamlit secrets, otherwise from .env
 try:
     GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
-except (AttributeError, KeyError): # AttributeError if st.secrets doesn't exist (local run), KeyError if key is missing
+except: 
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 try:
     LANGCHAIN_API_KEY = st.secrets["LANGCHAIN_API_KEY"]
-except (AttributeError, KeyError):
+except:
     LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 
 try:
     LANGCHAIN_TRACING_V2 = st.secrets["LANGCHAIN_TRACING_V2"]
-except (AttributeError, KeyError):
+except:
     LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
 
 LLM_MODEL_NAME = "gemini-1.5-pro-latest" # Or your preferred model
