@@ -171,7 +171,7 @@ matplotlib-inline==0.1.7
 mcp==1.6.0
 mdurl==0.1.2
 mistune==3.0.2
-ml-dtypes==0.2.0
+ml-dtypes
 mmh3==5.1.0
 monotonic==1.6
 more-itertools==10.5.0
