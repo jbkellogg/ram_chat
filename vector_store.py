@@ -48,10 +48,10 @@ def get_handbook_vector_store(embedding_model):
         documents = loader.load()
         print(f"Loaded {len(documents)} pages.")
 
-        print(f"Splitting documents into chunks (size={config.CHUNK_SIZE}, overlap={config.CHUNK_OVERLAP})...")
+        print(f"Splitting documents into chunks (size={config.HANDBOOK_CHUNK_SIZE}, overlap={config.HANDBOOK_CHUNK_OVERLAP})...")
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=config.CHUNK_SIZE,
-            chunk_overlap=config.CHUNK_OVERLAP
+            chunk_size=config.HANDBOOK_CHUNK_SIZE,
+            chunk_overlap=config.HANDBOOK_CHUNK_OVERLAP
         )
         chunks = text_splitter.split_documents(documents)
         print(f"Created {len(chunks)} chunks.")
