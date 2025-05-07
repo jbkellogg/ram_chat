@@ -7,6 +7,9 @@ try:
 except ImportError:
     from langchain_community.vectorstores import Chroma # Fallback if needed
 
+from langchain_community.document_loaders import PyPDFLoader # Add this line
+from langchain.text_splitter import RecursiveCharacterTextSplitter # Add this line if not already present for text_splitter
+
 # Imports needed for Self Query
 from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain.chains.query_constructor.base import AttributeInfo, Comparator # Import Comparator
