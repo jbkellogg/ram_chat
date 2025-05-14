@@ -1,0 +1,13 @@
+brotli
+bs4
+chromadb
+google_auth_oauthlib
+google-api-python-client
+gunicorn
+langchain
+langchain-chroma
+langchain_community
+langchain_google_genai
+lxml
+pypdf
+streamlit
