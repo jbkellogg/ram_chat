@@ -51,13 +51,13 @@ HANDBOOK_CHUNK_OVERLAP = 70
 # --- Email Config ---
 # Use absolute path for the DB directory
 EMAIL_DB_DIRECTORY = os.path.abspath(os.path.join(_config_dir, "chroma_db_emails_google_text_embedding_004"))
-REBUILD_EMAIL_VECTOR_STORE = False # Set to True to force rebuild on startup
+REBUILD_EMAIL_VECTOR_STORE = True # Set to True to force rebuild on startup
 USE_EMAIL_SELF_QUERY = False # Set to True to use self-querying retriever for emails
-UPDATE_EMAIL_ON_STARTUP = False # Set to True to check for new emails when the app starts
+UPDATE_EMAIL_ON_STARTUP = True # Set to True to check for new emails when the app starts
 EMAIL_UPDATE_WINDOW_DAYS = 2   # How many days back to check for new emails (on startup or manual update)
 DUMP_EMAIL_METADATA_ON_STARTUP = False # Set to True for debugging metadata on startup
 # Optional: Add timeframe for initial build if rebuilding
-# TIME_FRAME_FOR_EMAIL_VECTOR_STORE_BUILD = '30d' # e.g., '30d', '1m', '60d'
+TIME_FRAME_FOR_EMAIL_VECTOR_STORE_BUILD = '60d' # e.g., '30d', '1m', '60d'
 # Add config for number of emails retrieved
 NUMBER_OF_EMAILS_RETRIEVED = 15 # Default number of emails for retriever
 
