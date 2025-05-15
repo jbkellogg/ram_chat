@@ -5,3 +5,4 @@ __pycache__/
 *.pyd
 .env
 token.pickle
+credentials.json
